@@ -1,4 +1,4 @@
-import './Card.css';
+import './Card.css'
 
 const Card = (props) => {
     const classes = 'card ' + props.className; // MUST HAVE WHITE SPACE IN THE STRING, CLASSNAME INHERITS THE PRE-ASSIGNED STYLES
