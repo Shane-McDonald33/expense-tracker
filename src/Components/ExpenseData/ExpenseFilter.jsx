@@ -4,7 +4,7 @@ import './ExpenseFilter.css';
 
 const ExpensesFilter = (props) => { // the props is attached to the props attacthed to this component via the Expenses compoent "onChangeFilter"
    const dropDownChangeHandler = (event) => { // listened by the select form in the html
-    props.onChangeFilter(event.target.value) // prop assigned in Expenses.jsx
+    props.onChangeFilter(event.target.value) // prop assigned in Expenses.jsx, this accepts a function via props so as to be called in parent compenent (Expenses)
    }
   return (
     <div className='expenses-filter'>
