@@ -1,16 +1,16 @@
-
+import React from 'react';
 
 import './ExpenseFilter.css';
 
-const ExpensesFilter = (props) => { // the props is attached to the props attacthed to this component via the Expenses compoent "onChangeFilter"
-   const dropDownChangeHandler = (event) => { // listened by the select form in the html
-    props.onChangeFilter(event.target.value) // prop assigned in Expenses.jsx, this accepts a function via props so as to be called in parent compenent (Expenses)
-   }
+const ExpensesFilter = (props) => {
+  const dropDownChangeFilter = (e) => {
+    props.onChangeFilter(e.target.value)
+  }
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select value= {props.selected} onChange={dropDownChangeHandler}> 
+        <select onChange={dropDownChangeFilter} value={props.selected}>
           <option value='2022'>2022</option>
           <option value='2021'>2021</option>
           <option value='2020'>2020</option>
