@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
-    const [title, setTitle] = useState(props.title); //useState returns an arrary, the first value being the value itself and the second being the updated value 
-    console.log('expense item is evaluated by react') 
-    console.log(props)
-    const handleClick = () => {
-        setTitle('');
-        console.log(props.title)
-    }
     return (
+        <li>
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <div className='expense-item__description'>
@@ -20,8 +13,8 @@ const ExpenseItem = (props) => {
                     ${props.amount}
                 </div>
             </div>
-            <button onClick={handleClick}>Change Title</button>
         </Card>
+        </li>
     );
 }
 
