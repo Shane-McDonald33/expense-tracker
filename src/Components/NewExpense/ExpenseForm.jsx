@@ -41,7 +41,7 @@ const ExpenseForm = (props) => {
         event.preventDefault();
         const expenseInputData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate),
         }
         props.onSaveExpenseData(expenseInputData);
@@ -49,6 +49,8 @@ const ExpenseForm = (props) => {
         setEnteredAmount('');// must also enter value={value of state} in the input field in order to two-way bind these and clear input fields for the UI
         setEnteredDate('');// must also enter value={value of state} in the input field in order to two-way bind these and clear input fields for the UI
     }
+
+
 
     return (
         <form onSubmit={submitHandler}>
@@ -67,7 +69,7 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button type="submit">Cancel</button>
+                <button type="button" onClick={props.onCancel}>Cancel</button>
                 <button type="submit" >Add Expense</button>
             </div>
         </form>
